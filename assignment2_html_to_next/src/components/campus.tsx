@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Campus1 from "../../public/img/Campus1.png"
+import Campus2 from "../../public/img/Campus1.png"
+import Campus3 from "../../public/img/Campus1.png"
 
 const Campus = () => {
     return (
@@ -14,21 +17,21 @@ const Campus = () => {
 
         <div className="row">
             <div className="campus-col">
-                <img src="img/Campus1.png" alt="">
+                    <Image src={Campus1} alt=""/>
                 <div className="layer">
-                    <h3>DELHI</h3>
+                    <h3>Faisalabad</h3>
                 </div>
             </div>
             <div className="campus-col">
-                <img src="img/Campus2.png" alt="">
+                    <Image src={Campus2} alt=""/>
                 <div className="layer">
-                    <h3>HYDERABAD</h3>
+                    <h3>Lahore</h3>
                 </div>
             </div>
             <div className="campus-col">
-                <img src="img/Campus3.png" alt="">
+                <Image src={Campus3} alt=""/>
                 <div className="layer">
-                    <h3>MUMBAI</h3>
+                    <h3>Karachi</h3>
                 </div>
             </div>
         </div>
