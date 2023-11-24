@@ -1,16 +1,16 @@
 import Image from "next/image";
-import Link from 'next/link'
+import Link from "next/link";
 import '../style/styles.css'
 
-const HeaderContact = () => {
+const HeaderCourse = () => {
     return (
-         <section className="Sub-header">
+        <section className = "Sub-header">
         <nav>
-            <Link href="/" className="logo">Xplore
+            <Link href="/" className ="logo">Xplore
                 <i className="fab fa-staylinked"></i>skill
             </Link>
             <div className="nav-links" id="navLinks">
-              
+               
                 {/* <i className="fa fa-times" onclick="hideMenu()"></i> */}
                 <ul>
                     <li><Link href="/">Home</Link></li>
@@ -21,10 +21,10 @@ const HeaderContact = () => {
                 </ul>
             </div>
             {/* <i className="fa fa-bars" onclick="showMenu()"></i> */}
-           
+            
         </nav>
-        <h1>Contact Us</h1>
+        <h1>Our Courses</h1>
     </section>
     )
 }
-export { HeaderContact };
+export { HeaderCourse}

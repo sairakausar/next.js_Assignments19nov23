@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import '../style/styles.css'
 
 const HeaderBlog = () => {
     return (
         <section className="HeaderBlog">
         <nav>
             <Link href="/" className="logo">Xplore
-                <i className="fab fa-staylinked"></i>skill
+                <i className="fab fa-staylinked"></i>kill
             </Link>
             <div className="nav-links" id="navLinks">
               
