@@ -20,14 +20,14 @@ const ContactUs = () => {
               <div>
                 <i className="fa fa-home"></i>
                 <span>
-                  <h5>NH9 Road, ABC Building</h5>
-                  <p>Ghaziabad, Uttar Pradesh, IN</p>
+                  <h5>Canal Road, ABC Building</h5>
+                  <p>Faisalabad</p>
                 </span>
               </div>
               <div>
                 <i className="fa fa-phone"></i>
                 <span>
-                  <h5>+91 7445546525</h5>
+                  <h5>+91 </h5>
                   <p>Monday To Saturday, 9AM To 6PM</p>
                 </span>
               </div>
