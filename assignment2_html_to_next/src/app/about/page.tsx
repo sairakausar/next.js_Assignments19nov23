@@ -6,10 +6,10 @@ import { HeadssAbout } from "./headss_about"
 
 export default function About() {
     return (
-        <main>
-            <Headers />
-            <AboutUs />
-            <HeadssAbout/>
-    </main>
-)
+      <main>
+        <Headers />
+        <AboutUs />
+        <HeadssAbout />
+      </main>
+    );
 }

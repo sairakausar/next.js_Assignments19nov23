@@ -4,7 +4,7 @@ import '../style/styles.css'
 
 const HeaderBlog = () => {
     return (
-        <section className="HeaderBlog">
+        <section className="Sub-header">
         <nav>
             <Link href="/" className="logo">Xplore
                 <i className="fab fa-staylinked"></i>kill
