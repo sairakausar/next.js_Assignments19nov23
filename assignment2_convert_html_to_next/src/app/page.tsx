@@ -7,8 +7,7 @@ import Testimonials from "../Components/Testimonials";
 import { Call_to_Action } from "../Components/Call_to_Action"
 import { Footer } from "@/Components/Footer";
 
- {/* //..................... */}
-import AboutUs from "@/Components/About/About_page";
+
 
 export default function Home() {
   return (
@@ -20,10 +19,7 @@ export default function Home() {
       <Testimonials />
       <Call_to_Action></Call_to_Action>
       <Footer></Footer>
-      {/* //..................... */}
-      <AboutUs></AboutUs>
-
-      {/* //..................... */}
+    
     </main>
   );
 }

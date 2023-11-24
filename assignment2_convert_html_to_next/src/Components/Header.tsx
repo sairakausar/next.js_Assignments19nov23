@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import '../styles/styles.css'
 
@@ -5,15 +6,15 @@ export default function Header() {
     return (
       <section className="header">
         <nav>
-          <a href="index.html" className="logo">
+          <Link href="/" className="logo">
             Xplore
-            <i className="fab fa-staylinked"></i>kill
-          </a>
+            <i className="fab fa-staylinked"></i>Skill
+          </Link>
           <div className="nav-links" id="navLinks">
             {/* <i className="fa fa-times" onclick="hideMenu()"></i> */}
             <ul>
               <li>
-                <a href="index.html">Home</a>
+                <Link href="/">Home</Link>
               </li>
               <li>
                 <a href="course.html">Course</a>
@@ -22,7 +23,7 @@ export default function Header() {
                 <a href="blog.html">Blog</a>
               </li>
               <li>
-                <a href="about.html">About</a>
+                <Link href="/about">About</Link>
               </li>
               <li>
                 <a href="contact.html">Contact</a>
