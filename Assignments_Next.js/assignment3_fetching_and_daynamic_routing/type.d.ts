@@ -1,3 +1,8 @@
+type Post = {
+    "userId : number 
+    
+}
+
 type user = {
      
     "id": number,
