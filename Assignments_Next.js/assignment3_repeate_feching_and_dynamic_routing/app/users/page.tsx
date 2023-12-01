@@ -15,7 +15,7 @@ export default async function BacktoHome() {
           return (
             <p style={{ fontSize: "20px", color: "red" }}>
               <Link href={`/users/${user.id}`}>
-                {user.name}
+                <b>{user.name}</b>
               </Link>
             </p>
           );
