@@ -17,6 +17,7 @@ export default async function BacktoHome() {
               <Link href={`/users/${user.id}`}>
                 <b>{user.name}</b>
               </Link>
+              
             </p>
           );
         })}
