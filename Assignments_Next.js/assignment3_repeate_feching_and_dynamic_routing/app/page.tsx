@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       Home Page
       <br/>
-      <Link href = "">user</Link>
+      <Link href = "/users">user</Link>
     </main>
   )
 }
