@@ -1,29 +1,22 @@
-import getUser from "@/lib/getUser";
-import Link from "next/link";
-// type Params = {
-//     params: {
-//         userId: string,
-//     }
-// }
+import Link from "next/link"
+import getUser from "@/lib/getUser"
 
-// interface Params {
-//     params: {
-//         userId: string
-//     }
-// }
-
-export default async function userPage({ params }: any) {
-    const getData = await getUser(params.id);
-    return (
-      <div style={{ color: "Purple" }}>
-        {" "}
-        {/*style Put in 2 Curly Braket when put in not style.css */}
-        <b>
-          {/* use b tag for Bold */}
-          {getData.name}
-        </b>
-        <br />
-        <Link href="/users">Back to Users</Link>
+interface Params {
+  params: {
+    id: string
+  }
+}                                    
+export default async function page({ params }: Params) {
+  const getData = await getUser(params.id)
+  return (
+    <section>
+      <div style={{ color: "Green" }}>
+        <b>{getData.name}</b>
       </div>
-    );
+      <br />
+
+      <Link href="/users">Back to User</Link>
+    </section>
+  );
+
 }
