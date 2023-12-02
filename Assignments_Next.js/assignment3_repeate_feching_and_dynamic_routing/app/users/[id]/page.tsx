@@ -9,12 +9,13 @@ import getUser from "@/lib/getUser"
 export default async function page({ params }: { params: { id: string } }) {
   const getData = await getUser(params.id);
   return (
-    <div style={{ color: "Green" }}>
-      <b>{getData.name}</b>
+    <section>
+      <div style={{ color: "Green" }}>
+        <b>{getData.name}</b>
 
-      
-
+        <br />
+      </div>
       <Link href="/users">Back to User</Link>
-    </div>
+    </section>
   );
 }
