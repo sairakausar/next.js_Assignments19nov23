@@ -5,8 +5,9 @@ import getUser from "@/lib/getUser"
 //   params: {
 //     id: string
 //   }
-// }    
-// this is type                                
+// }
+// this is type 
+// this is the formula of routing                               
 export default async function page({ params }: { params: { id: string } }) {
   const getData = await getUser(params.id);
   return (
