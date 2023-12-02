@@ -9,3 +9,4 @@ export default async function getAllUsers() {  // when data fetch then take data
 }
 
 // we take all user in lib folder and make tsx file for getting All users
+// it fetch use for all the data

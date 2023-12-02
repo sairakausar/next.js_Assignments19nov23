@@ -6,3 +6,4 @@ export default async function getUser(id: string) {
   )
   return result.json();
 }
+// this fetching use for 1 user
