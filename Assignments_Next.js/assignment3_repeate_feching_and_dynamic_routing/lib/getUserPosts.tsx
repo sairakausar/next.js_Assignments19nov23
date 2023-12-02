@@ -1,6 +1,6 @@
 
 
 export default async function getUserPosts() {
-     await fetch("https://jsonplaceholder.typicode.com/posts")
-  return ( )
+   const userPost =  await fetch("https://jsonplaceholder.typicode.com/posts")
+  return userPost.json( )
 }
