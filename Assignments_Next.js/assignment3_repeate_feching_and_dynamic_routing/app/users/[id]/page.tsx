@@ -7,7 +7,7 @@ import getUser from "@/lib/getUser"
 //   }
 // }
 // this is type 
-// this is the formula of routing  of slug                             
+// this is the formula of routing  of slug  for Dynamic routing                           
 export default async function page({ params }: { params: { id: string } }) {
   const getData = await getUser(params.id);
   return (
