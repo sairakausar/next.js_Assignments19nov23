@@ -9,14 +9,13 @@ interface Params {
 export default async function page({ params }: Params) {
   const getData = await getUser(params.id)
   return (
-    <section>
-      <div style={{ color: "Green" }}>
-        <b>{getData.name}</b>
-      </div>
+    <div style={{ color: "Green" }}>
+      <b>{getData.name}</b>
+
       <br />
 
       <Link href="/users">Back to User</Link>
-    </section>
+    </div>
   );
 
 }
