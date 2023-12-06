@@ -1,0 +1,30 @@
+
+
+
+.container{
+    background-color: #CD201F;
+    padding: 3px;
+}
+.header{
+    background-color: #31AD2A;
+    
+
+    
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+   justify-content: flex-start;
+}
+.aba{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    width: 35%;
+}
+.logout{
+    display: flex;
+    justify-content: flex-end;
+}
