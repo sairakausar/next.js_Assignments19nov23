@@ -70,6 +70,8 @@ const BlogContent = () => {
         </div>
     </section>
 
+        //in the about page also have inclue the separate page.tsx for blox, and also this for other components
+
   
     )
 }
