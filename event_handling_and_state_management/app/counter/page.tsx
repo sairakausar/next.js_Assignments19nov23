@@ -1,9 +1,16 @@
 import React from 'react'
-import Button from '../button'
+import CounterFunction from "../componenets/counterfunction/counterfunction";
 
-export default function CounterPage() {
-    return (
-        <div>
-           < Button />
-        </div>)
+export default function Counter() {
+  return (
+    <div>
+      Counter
+      <br />
+      <br />
+      <br />
+      <br />
+      
+      <CounterFunction />
+    </div>
+  );
 }
