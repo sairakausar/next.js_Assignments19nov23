@@ -1,22 +1,31 @@
 "use client";
 
-import { log } from "console";
+import { useState } from "react";
 import MyButton from "../button/button";
 
 export default function CounterFunction() {
 
-    let count = 0
+    let [count, setCount] = useState(0)
 
-    let addition = () => {
-        count = count + 1
-        console.log(count)
+    // let count = 0
+
+    let addition_finction = () => {
+        setCount(count+1);
+        
+        // count = count + 1
+        // console.log(count)
+    }
+    let subtract_function = () => {
+              setCount(count-1)
     }
 
   return (
     <>
-      <div>Counter Function</div>
+      <div>Counter Function Clinet site below</div>
+
+          <MyButton button_title="Add" button_function={addition_finction} />
       {count}
-      <MyButton title="Add One" funtionTitle={addition} />
+          <MyButton button_title="Minus" button_function={subtract_function} />
     </>
   );
 }
