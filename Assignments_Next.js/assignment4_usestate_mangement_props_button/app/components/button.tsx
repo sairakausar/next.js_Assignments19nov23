@@ -5,7 +5,7 @@ export default function MyButton(props:any) {
   return (
     <div>
       <button
-        onClick ={props.ButtonFunctionalityNext}
+        onClick={props.ButtonFunctionality}
         style={props.MyButtonStyle}
         className={props.MyclassButton}
       >
