@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import MyButton from './button';
 import studentType from './type/type';
 
@@ -106,7 +106,12 @@ export default function NameChange() {
     },
   ];
 
-  const []
+  const [index, setIndex] = useState(0)  
+  
+
+  const NextIndex = () => {
+  setIndex(index+1)
+    }
 
   return (
     <div>
@@ -116,14 +121,16 @@ export default function NameChange() {
         MyButtonStyle={{ background: "red" }}
         MyclassButton="py-2 m-10"
         titleButton="Previous"
+        
       />
       <br />
-      
+      {students[index].name}
       <br />
       <MyButton
         MyButtonStyle={{ background: "green" }}
         MyclassButton="p-3 m-10"
         titleButton="Next"
+        ButtonFunctionality={NextIndex}
       />
     </div>
   );
