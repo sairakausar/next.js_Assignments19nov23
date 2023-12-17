@@ -110,8 +110,23 @@ export default function NameChange() {
   
 
   const NextIndex = () => {
-  setIndex(index+1)
+    if (index < students.length - 1 ) {
+      setIndex(index + 1);
     }
+    else {
+      alert("No more Next Student")
+    }
+      
+    }
+    
+  const PreviousIndex = () => {
+    if (index > 0) {
+       setIndex(index - 1);
+    }
+    else {
+      alert("No more previous Student");
+    }
+  }
 
   return (
     <div>
@@ -121,7 +136,7 @@ export default function NameChange() {
         MyButtonStyle={{ background: "red" }}
         MyclassButton="py-2 m-10"
         titleButton="Previous"
-        
+        ButtonFunctionality={PreviousIndex}
       />
       <br />
       {students[index].name}
