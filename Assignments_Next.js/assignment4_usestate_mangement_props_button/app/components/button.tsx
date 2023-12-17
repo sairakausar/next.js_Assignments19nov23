@@ -1,12 +1,12 @@
 import React from 'react'
 
-export default function MyButton() {
+
+export default function MyButton(props:any) {
   return (
     <div>
-      MyButton
-
+      <button style={props.MyButtonStyle} className={props.MyclassButton}>
+         {props.titleButton}
+      </button>
     </div>
-    //use state management
-    
-  )
+  );
 }
