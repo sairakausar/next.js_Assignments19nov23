@@ -1,54 +1,24 @@
 'use client'
 
-import { log } from 'console';
-import React, { useState } from 'react'
+import React from 'react'
+import Displaycontact from './displaycontact';
 
-export default function contactForms() {
-    // //  5
-    // let hisnameShowFront : string = " "
+export default function FormDocumentation() {
 
-    //6  
-    let [nameShowonBox, setnameShowonBox] = useState("");
-    //  setnameShowonBox = ;
 
-          // 1
-    const onClickButton = () => {
-      console.log("ABC");
-    }
+
     
-    // 2
-    // const valueChangeThenIKnow = () => {
-    //     console.log("XYZ")
-    // }
-    // 3// ()object value show = event = 
-    // 4 down wala     
-    const valueChangeThenIKnow = (event: any) => {
-        console.log("valueChangeThenIKnow", event.target.value);
-      
-        // 7  // first this is slow now commnt it
-        
-        // hisnameShowFront = event.target.value
-      setnameShowonBox(event.target.value);
-    }
-                                        
   return (
     <div>
       <form className="max-w-md mx-auto">
         <div className="mb-4">
-          {/* 5
-          Name: {hisnameShowFront} */}
-          {/* //   7 */}
-          {/* // 8 */}
-          Name: {nameShowonBox}
           <label
             htmlFor="name"
             className="block text-gray-700 text-sm font-bold mb-2"
-          >                    
+          >
             Name
           </label>
           <input
-            //   2
-            onChange={valueChangeThenIKnow}
             type="text"
             id="name"
             name="name"
@@ -56,7 +26,7 @@ export default function contactForms() {
             required
           />
         </div>
-                                  
+
         <div className="mb-4">
           <label
             htmlFor="email"
@@ -65,7 +35,6 @@ export default function contactForms() {
             Email
           </label>
           <input
-            onChange={valueChangeThenIKnow}
             type="email"
             id="email"
             name="email"
@@ -94,19 +63,12 @@ export default function contactForms() {
           <button
             type="submit"
             className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-            // 1
-            onClick={onClickButton}
-            //        submit button ka liya phaly on click lagana ha for
-            //  submit click action uper phala is ka variable define kiya ha
-            // onclick button ka
           >
             Submit
           </button>
         </div>
       </form>
+      <Displaycontact />
     </div>
   );
-    }
-    
-
-
+}
