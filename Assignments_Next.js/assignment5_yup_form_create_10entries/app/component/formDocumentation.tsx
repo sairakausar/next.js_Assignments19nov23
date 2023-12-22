@@ -28,7 +28,7 @@ export default function FormDocumentation() {
       [event.target.name]: [event.target.value],
     };
       //3)
-
+                                            
       // :  []more value
       // value assign with:
       // it make run tine variable himsely by react for this purpose we put
@@ -37,7 +37,7 @@ export default function FormDocumentation() {
       // the name to email and other with Dynamicly
 setallTheContactImake1UseState(allTheContactImake1UseStateMergerwithNewEntries);
     //5) now his copy can come out with the st() allTheContactImake1UseStateMergerwithNewEntries
-    // 
+      
    }
 
     
