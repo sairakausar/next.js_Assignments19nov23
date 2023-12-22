@@ -1,15 +1,26 @@
 'use client'
 
-import React from 'react'
+import { useState } from 'react'; 
 import Displaycontact from './displaycontact';
 
 export default function FormDocumentation() {
+
+  const [allTheContentImake1UseState, setallTheContentImake1UseState] =
+    useState({
+      name    :  "",
+      email   :  "",
+      message: 0
+      // we never use = sign in the object. In the object always use: 
+    });
 
 
 
     
   return (
     <div>
+      <Displaycontact />
+
+
       <form className="max-w-md mx-auto">
         <div className="mb-4">
           <label
@@ -68,7 +79,6 @@ export default function FormDocumentation() {
           </button>
         </div>
       </form>
-      <Displaycontact />
     </div>
   );
 }
