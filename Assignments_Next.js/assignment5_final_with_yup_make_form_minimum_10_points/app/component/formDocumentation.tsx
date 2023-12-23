@@ -4,18 +4,34 @@ import {useSate} from 'react'
 export default function FormDocumentation() {
   return (
     <div>
-      <form  className="max-w-md mx-auto">
+      <form className="max-w-md mx-auto">
         <div className="mb-4">
           <label
-            htmlFor="name"
+            htmlFor="firstname"
             className="block text-gray-700 text-sm font-bold mb-2"
           >
-            Name
+            First Name
           </label>
           <input
             type="text"
-            id="name"
-            name="name"
+            id="firstname"
+            name="firstname"
+            className="w-full px-3 py-2 border rounded-md"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label
+            htmlFor="lastname"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Last Name
+          </label>
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
             className="w-full px-3 py-2 border rounded-md"
             required
           />
@@ -32,6 +48,104 @@ export default function FormDocumentation() {
             type="email"
             id="email"
             name="email"
+            className="w-full px-3 py-2 border rounded-md"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label
+            htmlFor="number"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Phone
+          </label>
+          <input
+            type="number"
+            id="number"
+            name="number"
+            className="w-full px-3 py-2 border rounded-md"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label
+            htmlFor="number"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            CNIC
+          </label>
+          <input
+            type="number"
+            id="number"
+            name="number"
+            className="w-full px-3 py-2 border rounded-md"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label
+            htmlFor="name"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Gender
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            className="w-full px-3 py-2 border rounded-md"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label
+            htmlFor="name"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Age
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            className="w-full px-3 py-2 border rounded-md"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label
+            htmlFor="name"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            City
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            className="w-full px-3 py-2 border rounded-md"
+            required
+          />
+        </div>
+
+        
+
+        <div className="mb-4">
+          <label
+            htmlFor="name"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Country
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
             className="w-full px-3 py-2 border rounded-md"
             required
           />
