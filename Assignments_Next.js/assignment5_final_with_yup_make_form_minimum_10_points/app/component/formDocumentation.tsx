@@ -3,104 +3,65 @@ import {useSate} from 'react'
 
 export default function FormDocumentation() {
   return (
-      <div>
-     
+    <div>
+      <form  className="max-w-md mx-auto">
+        <div className="mb-4">
+          <label
+            htmlFor="name"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            className="w-full px-3 py-2 border rounded-md"
+            required
+          />
+        </div>
 
-const Form = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    age: '',
-    phone: '',
-    email: '',
-    cnic: '',
-    gender: '',
-    city: '',
-    province: '',
-    country: '',
-    message: '',
-  });
+        <div className="mb-4">
+          <label
+            htmlFor="email"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            className="w-full px-3 py-2 border rounded-md"
+            required
+          />
+        </div>
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+        <div className="mb-4">
+          <label
+            htmlFor="message"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={4}
+            className="w-full px-3 py-2 border rounded-md"
+            required
+          ></textarea>
+        </div>
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form Data:', formData);
-    // You can send the data to your backend or perform other actions.
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        First Name:
-        <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
-      </label>
-
-      <label>
-        Last Name:
-        <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
-      </label>
-
-      <label>
-        Age:
-        <input type="text" name="age" value={formData.age} onChange={handleChange} />
-      </label>
-
-      <label>
-        Phone:
-        <input type="text" name="phone" value={formData.phone} onChange={handleChange} />
-      </label>
-
-      <label>
-        Email:
-        <input type="email" name="email" value={formData.email} onChange={handleChange} />
-      </label>
-
-      <label>
-        CNIC:
-        <input type="text" name="cnic" value={formData.cnic} onChange={handleChange} />
-      </label>
-
-      <label>
-        Gender:
-        <input type="text" name="gender" value={formData.gender} onChange={handleChange} />
-      </label>
-
-      <label>
-        City:
-        <input type="text" name="city" value={formData.city} onChange={handleChange} />
-      </label>
-
-      <label>
-        Province:
-        <input type="text" name="province" value={formData.province} onChange={handleChange} />
-      </label>
-
-      <label>
-        Country:
-        <input type="text" name="country" value={formData.country} onChange={handleChange} />
-      </label>
-
-      <label>
-        Message:
-        <textarea name="message" value={formData.message} onChange={handleChange}></textarea>
-      </label>
-
-      <button type="submit">Submit</button>
-    </form>
-  
-
-
-
-
-
+        <div className="mb-6">
+          <button
+            type="submit"
+            className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
-  )
+  );
 }
