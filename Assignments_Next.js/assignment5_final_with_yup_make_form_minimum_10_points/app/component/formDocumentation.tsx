@@ -19,7 +19,9 @@ export default function FormDocumentation() {
     country:       "",
     message:       "",
      
-  });
+    });
+  
+  const [contactHandlerList, setContactHandlerList] = useState<contentType>([])
   const allContactInfoHandler = (event: any) => {
     let iMakeUseStateMergeWithNewEntries = {
       ...oneUseSateuseForall,
@@ -28,7 +30,9 @@ export default function FormDocumentation() {
  setoneUseSateuseForall(iMakeUseStateMergeWithNewEntries);   
   }
        
-
+  const onClickHandler = () => {
+   
+ }
 
   return (
     <div>
@@ -145,7 +149,7 @@ export default function FormDocumentation() {
           </label>
           <input
             onChange={allContactInfoHandler}
-            type="text"
+            type="number"
             id="age"
             name="age"
             className="w-full px-3 py-2 border rounded-md"
