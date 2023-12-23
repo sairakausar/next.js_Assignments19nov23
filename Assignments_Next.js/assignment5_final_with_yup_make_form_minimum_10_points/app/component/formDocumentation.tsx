@@ -1,7 +1,8 @@
 'use client'
 
 import React from 'react'
-import {useState} from 'react'
+import { useState } from 'react'
+import DisplayContent from './displayContent';
 
 export default function FormDocumentation() {
        
@@ -11,7 +12,7 @@ export default function FormDocumentation() {
     lastname:      "",
     email:         "",
     phone:         "",
-    CNIC:          "",
+    cnic:          "",
     gender:        "",
     age:           "",
     city:          "",
@@ -31,6 +32,7 @@ export default function FormDocumentation() {
 
   return (
     <div>
+      <DisplayContent childObject={oneUseSateuseForall} />
       <form className="max-w-md mx-auto">
         <div className="mb-4">
           <label
@@ -93,8 +95,8 @@ export default function FormDocumentation() {
           <input
             onChange={allContactInfoHandler}
             type="number"
-            id="number"
-            name="number"
+            id="phone"
+            name="phone"
             className="w-full px-3 py-2 border rounded-md"
             required
           />
@@ -109,9 +111,9 @@ export default function FormDocumentation() {
           </label>
           <input
             onChange={allContactInfoHandler}
-            type="number"
-            id="number"
-            name="number"
+            type="text"
+            id="cnic"
+            name="cnic"
             className="w-full px-3 py-2 border rounded-md"
             required
           />
@@ -127,8 +129,8 @@ export default function FormDocumentation() {
           <input
             onChange={allContactInfoHandler}
             type="text"
-            id="name"
-            name="name"
+            id="gender"
+            name="gender"
             className="w-full px-3 py-2 border rounded-md"
             required
           />
@@ -144,8 +146,8 @@ export default function FormDocumentation() {
           <input
             onChange={allContactInfoHandler}
             type="text"
-            id="name"
-            name="name"
+            id="age"
+            name="age"
             className="w-full px-3 py-2 border rounded-md"
             required
           />
@@ -161,8 +163,8 @@ export default function FormDocumentation() {
           <input
             onChange={allContactInfoHandler}
             type="text"
-            id="name"
-            name="name"
+            id="city"
+            name="city"
             className="w-full px-3 py-2 border rounded-md"
             required
           />
@@ -178,8 +180,8 @@ export default function FormDocumentation() {
           <input
             onChange={allContactInfoHandler}
             type="text"
-            id="name"
-            name="name"
+            id="country"
+            name="country"
             className="w-full px-3 py-2 border rounded-md"
             required
           />
