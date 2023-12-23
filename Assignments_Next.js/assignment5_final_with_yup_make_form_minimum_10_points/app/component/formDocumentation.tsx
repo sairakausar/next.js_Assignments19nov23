@@ -2,6 +2,23 @@ import React from 'react'
 import {useSate} from 'react'
 
 export default function FormDocumentation() {
+       
+  const [oneUseSateuseForall, setoneUseSateuseForall] = useSate({
+    firstname:     "",
+    lastname:      "",
+    email:         "",
+    phone:         "",
+    CNIC:          "",
+    gender:        "",
+    age:           "",
+    city:          "",
+    country:       "",
+    message:       "",
+     
+  });
+       
+
+
   return (
     <div>
       <form className="max-w-md mx-auto">
