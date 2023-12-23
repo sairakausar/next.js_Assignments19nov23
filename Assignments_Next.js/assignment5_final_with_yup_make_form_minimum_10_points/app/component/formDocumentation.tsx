@@ -1,10 +1,10 @@
 import React from 'react'
+import {useSate} from 'react'
 
-export default function formDocumentation() {
+export default function FormDocumentation() {
   return (
       <div>
-        // Form.js
-import { useState } from 'react';
+     
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -95,8 +95,7 @@ const Form = () => {
 
       <button type="submit">Submit</button>
     </form>
-  )
-}
+  
 
 
 
