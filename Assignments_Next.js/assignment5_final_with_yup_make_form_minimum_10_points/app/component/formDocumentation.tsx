@@ -1,9 +1,12 @@
+'use client'
+
 import React from 'react'
-import {useSate} from 'react'
+import {useState} from 'react'
 
 export default function FormDocumentation() {
        
-  const [oneUseSateuseForall, setoneUseSateuseForall] = useSate({
+  const [oneUseSateuseForall, setoneUseSateuseForall] =
+    useState({
     firstname:     "",
     lastname:      "",
     email:         "",
@@ -16,6 +19,13 @@ export default function FormDocumentation() {
     message:       "",
      
   });
+  const allContactInfoHandler = (event: any) => {
+    let iMakeUseStateMergeWithNewEntries = {
+      ...oneUseSateuseForall,
+      [event.target.name]:[event.target.value],
+    };
+ setoneUseSateuseForall(iMakeUseStateMergeWithNewEntries);   
+  }
        
 
 
@@ -30,6 +40,7 @@ export default function FormDocumentation() {
             First Name
           </label>
           <input
+            onChange={allContactInfoHandler}
             type="text"
             id="firstname"
             name="firstname"
@@ -46,6 +57,7 @@ export default function FormDocumentation() {
             Last Name
           </label>
           <input
+            onChange={allContactInfoHandler}
             type="text"
             id="lastname"
             name="lastname"
@@ -62,6 +74,7 @@ export default function FormDocumentation() {
             Email
           </label>
           <input
+            onChange={allContactInfoHandler}
             type="email"
             id="email"
             name="email"
@@ -78,6 +91,7 @@ export default function FormDocumentation() {
             Phone
           </label>
           <input
+            onChange={allContactInfoHandler}
             type="number"
             id="number"
             name="number"
@@ -94,6 +108,7 @@ export default function FormDocumentation() {
             CNIC
           </label>
           <input
+            onChange={allContactInfoHandler}
             type="number"
             id="number"
             name="number"
@@ -110,6 +125,7 @@ export default function FormDocumentation() {
             Gender
           </label>
           <input
+            onChange={allContactInfoHandler}
             type="text"
             id="name"
             name="name"
@@ -126,6 +142,7 @@ export default function FormDocumentation() {
             Age
           </label>
           <input
+            onChange={allContactInfoHandler}
             type="text"
             id="name"
             name="name"
@@ -142,6 +159,7 @@ export default function FormDocumentation() {
             City
           </label>
           <input
+            onChange={allContactInfoHandler}
             type="text"
             id="name"
             name="name"
@@ -149,8 +167,6 @@ export default function FormDocumentation() {
             required
           />
         </div>
-
-        
 
         <div className="mb-4">
           <label
@@ -160,6 +176,7 @@ export default function FormDocumentation() {
             Country
           </label>
           <input
+            onChange={allContactInfoHandler}
             type="text"
             id="name"
             name="name"
@@ -176,6 +193,7 @@ export default function FormDocumentation() {
             Message
           </label>
           <textarea
+            onChange={allContactInfoHandler}
             id="message"
             name="message"
             rows={4}
