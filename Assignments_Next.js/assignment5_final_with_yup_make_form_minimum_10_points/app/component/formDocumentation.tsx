@@ -21,7 +21,7 @@ export default function FormDocumentation() {
      
     });
   
-  const [contactHandlerList, setContactHandlerList] = useState<contentType>([])
+  const [contactHandlerList, setContactHandlerList] = useState<contantType>([])
   const allContactInfoHandler = (event: any) => {
     let iMakeUseStateMergeWithNewEntries = {
       ...oneUseSateuseForall,
@@ -31,7 +31,7 @@ export default function FormDocumentation() {
   }
        
   const onClickHandler = () => {
-   
+   let newContactDataType:contacttypes[]
  }
 
   return (
