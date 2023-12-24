@@ -31,7 +31,7 @@ export default function FormDocumentation() {
   }
        
   const onClickHandler = () => {
-   let newContactDataType:contacttypes[]
+   let newContactDataType:contacttypes[]=[...Contact]
  }
 
   return (
