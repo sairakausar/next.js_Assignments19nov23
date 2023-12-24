@@ -1,14 +1,39 @@
 // ExpenseList.js
 
 import { ExpensePropType } from "../types/componentsType";
+import ExpenseModal from "./expenseModel";
+import { useState } from "react";
 
 import React from "react";
 //1)   //2) error rmove with the chage type and also include type in separate
-//type folder
-const ExpenseList = ({ expenses }: {expenses: ExpensePropType[]}) => {
+//type folder     //5)[]for map give or take only list forms data
+const ExpenseList = ({ expenses }: { expenses: ExpensePropType[] }) => {
+
+    const [expense, setExpense] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
+
+    //12)
+    
+    
+  //9
+  const onAddExpense = () => {
+    alert("Button Click");
+  };
+
+  const onClose = () => {
+    setIsOpen(false);
+  };
   return (
     <div className="my-8">
       <h2 className="text-2xl font-bold mb-4">Expense List</h2>
+      <button onClick={()=>setIsOpen(true)}> Add Expenses</button>
+      {/* //10 */}
+      {/* //8 */}
+      <ExpenseModal
+        isOpen={isOpen}
+        onClose={onClose} ///9)// first Do
+        onAddExpense={onAddExpense}
+      />
       <table className="min-w-full border border-gray-300">
         <thead>
           <tr>

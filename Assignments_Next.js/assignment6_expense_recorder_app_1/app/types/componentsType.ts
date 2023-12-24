@@ -9,3 +9,10 @@ export type ExpensePropType = {
     note: string,
     date:string,
 }
+//7
+export type ExpenseModelProps = {
+    isOpen: boolean,
+    onClose: () => void,
+    onAddExpense:()=> void,
+
+}
