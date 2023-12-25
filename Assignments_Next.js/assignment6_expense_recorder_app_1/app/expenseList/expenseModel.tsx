@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import { ExpenseModelProps } from "../types/componentsType";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
-const ExpenseModal = ({ isOpen, onClose, onAddExpense }: ExpenseModelProps) => {
-  const [amount, setAmount] = useState("");
-  const [category, setCategory] = useState("");
-  const [note, setNote] = useState("");
-  const [date, setDate] = useState("");
+const ExpenseModal = ({ isOpen, onClose, onAddExpense, expenseProp }: ExpenseModelProps) => {
+  const [amount, setAmount] = useState(expenseProp.amount);
+  const [category, setCategory] = useState(expenseProp.category);
+  const [note, setNote] = useState(expenseProp.note);
+  const [date, setDate] = useState(expenseProp.date);
 
   const categories = [
     "Groceries",

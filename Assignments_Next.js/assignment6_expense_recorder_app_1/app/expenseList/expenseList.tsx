@@ -11,9 +11,19 @@ const ExpenseList = () => {
   // { expenses }: { expenses: ExpensePropType[] }
   ///16
   const [expenses, setExpenses] = useState<expenseType[]>([]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const [expense, setExpense] = useState<expenseType>({
+    
+    note: '',
+    date: '',
+    amount: 0,
+    category: '',
+    id: '',
+
+  });
   //19 for toatal now
-  const [totalAmount, settotalAmount] = useState(0)
+  const [totalAmount, settotalAmount] = useState<number>(0)
 
 
   //12)
@@ -38,6 +48,14 @@ const ExpenseList = () => {
     settotalAmount(totalAmount - expense.amount);
 
   }
+
+
+  const updatExpenseValueFunction = (expense: expenseType) => {
+    setIsOpen(true)
+    setExpense(expense);
+  }
+
+
   return (
     <div className="my-8">
       <h2 className="text-2xl font-bold mb-4">Expense List</h2>
@@ -45,6 +63,7 @@ const ExpenseList = () => {
       {/* //10 */}
       {/* //8 */}
       <ExpenseModal
+        expenseProp={expense}
         isOpen={isOpen}
         onClose={onClose} ///9)// first Do
         onAddExpense={onAddExpense}
@@ -70,9 +89,18 @@ const ExpenseList = () => {
                 <td className="border-b p-2">{expense.note}</td>
                 <td className="border-b p-2">{expense.date}</td>
                 <td>
-                  <button className="bg-green-800">Edit</button>
                   <button
-                    onClick={()=>{dontIncludeThis(expense)}}
+                    onClick={() => {
+                      updatExpenseValueFunction(expense);
+                    }}
+                    className="bg-green-800"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => {
+                      dontIncludeThis(expense);
+                    }}
                     className="bg-red-800"
                   >
                     Delete

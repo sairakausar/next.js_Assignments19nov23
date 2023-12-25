@@ -13,7 +13,8 @@ export type ExpensePropType = {
 export type ExpenseModelProps = {
     isOpen: boolean,
     onClose: () => void,
-    onAddExpense:()=> void,
+    onAddExpense: () => void,
+    expenseProp: expenseType,
 
 }//13
 export type onChangeEventType = {
