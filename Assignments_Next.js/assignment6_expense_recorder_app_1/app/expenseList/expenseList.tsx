@@ -30,10 +30,13 @@ const ExpenseList = () => {
     setIsOpen(false);
   };
 
-  const dontInclud = (expense: expenseType) => {
-   const filterResult = expenses.filter((exp) => {
-      exp.id !== expense.id
-    })
+  const dontIncludeThis = (expense: expenseType) => {
+    const filteredResult = expenses.filter((exp) => {
+     return exp.id !== expense.id;
+   })
+    setExpenses(filteredResult)
+    settotalAmount(totalAmount - expense.amount);
+
   }
   return (
     <div className="my-8">
@@ -68,7 +71,12 @@ const ExpenseList = () => {
                 <td className="border-b p-2">{expense.date}</td>
                 <td>
                   <button className="bg-green-800">Edit</button>
-                  <button className="bg-red-800">Delete</button>
+                  <button
+                    onClick={()=>{dontIncludeThis(expense)}}
+                    className="bg-red-800"
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))
