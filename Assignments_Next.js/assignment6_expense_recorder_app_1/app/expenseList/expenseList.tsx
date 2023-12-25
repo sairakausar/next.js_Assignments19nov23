@@ -12,6 +12,9 @@ const ExpenseList = () => {
   ///16
   const [expenses, setExpenses] = useState<expenseType[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+  //19 for toatal now
+  const [totalAmount, settotalAmount] = useState(0)
+
 
   //12)
 
@@ -19,12 +22,19 @@ const ExpenseList = () => {
   const onAddExpense = (expense: expenseType) => {
     alert("Button Click");
     //17
+    settotalAmount(totalAmount + expense.amount);
     setExpenses([...expenses, expense]);
   };
 
   const onClose = () => {
     setIsOpen(false);
   };
+
+  const dontInclud = (expense: expenseType) => {
+   const filterResult = expenses.filter((exp) => {
+      exp.id !== expense.id
+    })
+  }
   return (
     <div className="my-8">
       <h2 className="text-2xl font-bold mb-4">Expense List</h2>
@@ -44,6 +54,7 @@ const ExpenseList = () => {
             <th className="border-b p-2">Category</th>
             <th className="border-b p-2">Note</th>
             <th className="border-b p-2">Date</th>
+            <th className="border-b p-2">Buttton</th>
           </tr>
         </thead>
         <tbody>
@@ -55,16 +66,25 @@ const ExpenseList = () => {
                 <td className="border-b p-2">{expense.category}</td>
                 <td className="border-b p-2">{expense.note}</td>
                 <td className="border-b p-2">{expense.date}</td>
+                <td>
+                  <button className="bg-green-800">Edit</button>
+                  <button className="bg-red-800">Delete</button>
+                </td>
               </tr>
             ))
           ) : (
             //19 if steaatne   ,in return if statment in it use the looppppppppppp
-            <tr>no record find</tr>
+            <tr>
+              <td>no record find</td>
+            </tr>
           )}
         </tbody>
       </table>
+      {/* //20 */}
+
+      <div>{totalAmount}</div>
     </div>
   );
 };
 
-export default ExpenseList;
+export default ExpenseList

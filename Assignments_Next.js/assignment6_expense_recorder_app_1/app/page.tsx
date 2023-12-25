@@ -6,14 +6,7 @@ import ExpenseModal from './expenseList/expenseModel';
 //4)
 export default function Home() {
 
-  //9 
-  const onAddExpense = () => {
-    alert("Button Click")
-  }
-
-  const onClose = () => {
-    alert("on Close")
-  }
+ 
 
 
   return (
@@ -32,11 +25,9 @@ export default function Home() {
         ]}
       />
       {/* //8 */}
-      <ExpenseModal
-        isOpen={false}
-        onClose={onClose}///9)// first Do
-        onAddExpense={onAddExpense}
-      />
+      {/* {.^  6} */}
+    
+    
     </main>
   );
 }
