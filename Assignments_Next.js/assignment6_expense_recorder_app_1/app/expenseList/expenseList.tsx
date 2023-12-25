@@ -1,23 +1,25 @@
 // ExpenseList.js
-
-import { ExpensePropType } from "../types/componentsType";
+// 16
+import { ExpensePropType, expenseType } from "../types/componentsType";
 import ExpenseModal from "./expenseModel";
 import { useState } from "react";
 
 import React from "react";
 //1)   //2) error rmove with the chage type and also include type in separate
 //type folder     //5)[]for map give or take only list forms data
-const ExpenseList = ({ expenses }: { expenses: ExpensePropType[] }) => {
+const ExpenseList = () => {
+  // { expenses }: { expenses: ExpensePropType[] }
+  ///16
+  const [expenses, setExpenses] = useState<expenseType[]>([]);
+  const [isOpen, setIsOpen] = useState(false);
 
-    const [expense, setExpense] = useState([]);
-    const [isOpen, setIsOpen] = useState(false);
+  //12)
 
-    //12)
-    
-    
-  //9
-  const onAddExpense = () => {
+  //9                     //15
+  const onAddExpense = (expense: expenseType) => {
     alert("Button Click");
+    //17
+    setExpenses([...expenses, expense]);
   };
 
   const onClose = () => {
@@ -26,7 +28,7 @@ const ExpenseList = ({ expenses }: { expenses: ExpensePropType[] }) => {
   return (
     <div className="my-8">
       <h2 className="text-2xl font-bold mb-4">Expense List</h2>
-      <button onClick={()=>setIsOpen(true)}> Add Expenses</button>
+      <button onClick={() => setIsOpen(true)}> Add Expenses</button>
       {/* //10 */}
       {/* //8 */}
       <ExpenseModal
@@ -45,15 +47,20 @@ const ExpenseList = ({ expenses }: { expenses: ExpensePropType[] }) => {
           </tr>
         </thead>
         <tbody>
-          {expenses.map((expense: any) => (
-            <tr key={expense.id} className="hover:bg-gray-100">
-              <td className="border-b p-2">{expense.id}</td>
-              <td className="border-b p-2">{expense.amount}</td>
-              <td className="border-b p-2">{expense.category}</td>
-              <td className="border-b p-2">{expense.note}</td>
-              <td className="border-b p-2">{expense.date}</td>
-            </tr>
-          ))}
+          {expenses.length > 0 ? (
+            expenses.map((expense: any) => (
+              <tr key={expense.id} className="hover:bg-gray-100">
+                <td className="border-b p-2">{expense.id}</td>
+                <td className="border-b p-2">{expense.amount}</td>
+                <td className="border-b p-2">{expense.category}</td>
+                <td className="border-b p-2">{expense.note}</td>
+                <td className="border-b p-2">{expense.date}</td>
+              </tr>
+            ))
+          ) : (
+            //19 if steaatne   ,in return if statment in it use the looppppppppppp
+            <tr>no record find</tr>
+          )}
         </tbody>
       </table>
     </div>

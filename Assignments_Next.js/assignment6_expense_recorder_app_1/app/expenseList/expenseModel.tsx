@@ -75,14 +75,20 @@ const ExpenseModal = ({ isOpen, onClose, onAddExpense }: ExpenseModelProps) => {
               onChange={(e) => setCategory(e.target.value)}
               className="w-full border p-2 mb-2"
             >
-              <option value="" disabled>
+              {/* <option value="" disabled>
                 Select a category
               </option>
               {categories.map((cat) => (
                 <option key={cat} value={cat}>
                   {cat}
                 </option>
-              ))}
+              ))} */}
+              <option disabled>Select catagori </option>
+              {categories.map((category) => { //18 //19
+                return <option key={category}>{category}</option>;
+              })
+              
+              }
             </select>
 
             <label className="block text-gray-600 text-sm mb-2" htmlFor="note">

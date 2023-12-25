@@ -15,4 +15,15 @@ export type ExpenseModelProps = {
     onClose: () => void,
     onAddExpense:()=> void,
 
+}//13
+export type onChangeEventType = {
+    target: (Value :string, name:string)
+}
+//14
+export type expenseType = {
+    note: string,
+    date: string,
+    amount: number,
+    category: string,
+    id: string,
 }
