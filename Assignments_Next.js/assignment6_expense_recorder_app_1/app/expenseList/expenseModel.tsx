@@ -4,10 +4,11 @@ import { ExpenseModelProps } from "../types/componentsType";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const ExpenseModal = ({ isOpen, onClose, onAddExpense, expenseProp }: ExpenseModelProps) => {
-  const [amount, setAmount] = useState(expenseProp.amount);
-  const [category, setCategory] = useState(expenseProp.category);
-  const [note, setNote] = useState(expenseProp.note);
-  const [date, setDate] = useState(expenseProp.date);
+  console.log(expenseProp);
+  const [amount, setAmount] = useState<number>(expenseProp.amount);
+  const [category, setCategory] = useState<string>(expenseProp.category);
+  const [note, setNote] = useState<string>(expenseProp.note);
+  const [date, setDate] = useState<string>(expenseProp.date);
 
   const categories = [
     "Groceries",
@@ -29,6 +30,10 @@ const ExpenseModal = ({ isOpen, onClose, onAddExpense, expenseProp }: ExpenseMod
     };
 
     onAddExpense(newExpense);
+    setAmount(0);
+    setCategory('')
+    setNote('')
+    setDate('')
     onClose();
   };
 
@@ -57,7 +62,7 @@ const ExpenseModal = ({ isOpen, onClose, onAddExpense, expenseProp }: ExpenseMod
             <input
               type="number"
               id="amount"
-              value={amount}
+              value={amount || expenseProp.amount }
               onChange={(e) => setAmount(e.target.value)}
               className="w-full border p-2 mb-2"
             />
@@ -71,7 +76,7 @@ const ExpenseModal = ({ isOpen, onClose, onAddExpense, expenseProp }: ExpenseMod
 
             <select
               id="category"
-              value={category}
+              value={category || expenseProp.category}
               onChange={(e) => setCategory(e.target.value)}
               className="w-full border p-2 mb-2"
             >
@@ -96,7 +101,7 @@ const ExpenseModal = ({ isOpen, onClose, onAddExpense, expenseProp }: ExpenseMod
             </label>
             <textarea
               id="note"
-              value={note}
+              value={note || expenseProp.note}
               onChange={(e) => setNote(e.target.value)}
               className="w-full border p-2 mb-2"
             />
@@ -107,7 +112,7 @@ const ExpenseModal = ({ isOpen, onClose, onAddExpense, expenseProp }: ExpenseMod
             <input
               type="date"
               id="date"
-              value={date}
+              value={date || expenseProp.date}
               onChange={(e) => setDate(e.target.value)}
               className="w-full border p-2 mb-4"
             />
