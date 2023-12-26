@@ -6,7 +6,7 @@ import { CustomButton } from "../components";
 
 const Hero = () => {
     const handleScroll = () => {
-        
+        alert("closed")
     }
   return (
     <div className="hero">
