@@ -7,6 +7,7 @@ export interface CustomButtonProps{
     handleClick?: () => void,
     //or
     // handleClick:  MouseEventHandler<HTMLButtonElement>,
+    btnType?: "button" | "submit"
 }
 
 
