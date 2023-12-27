@@ -10,16 +10,11 @@ const CustomButton = (props: CustomButtonProps) => {
     <button
       disabled={false}
       type={"button"}
-      className={props.containersStyles}
-      onClick={
-        props.handleClick
-      }
-    >
+      className={`custom-btn  ${props.containersStyles}`}
       
-          <span className={"flex-1"}>
-          {props.title}
-          
-          </span>
+      onClick={props.handleClick}
+    >
+      <span className={"flex-1"}>{props.title}</span>
     </button>
   );
 };
