@@ -4,5 +4,5 @@ import CustomButton from "./CustomButton";
 
 export {
     Hero ,
-    CustomButton
+    CustomButton,
 }
