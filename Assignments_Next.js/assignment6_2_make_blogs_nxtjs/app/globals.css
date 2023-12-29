@@ -16,6 +16,10 @@
   @apply max-w-[1440px] mx-auto;
 }
 
+.combobox__Option{
+  @apply relative cursor-default select-none py-2 pl-10 pr-4
+}
+
 .padding-x {
   @apply sm:px-16 px-6;
 }

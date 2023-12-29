@@ -4,7 +4,7 @@ import { SearchManufacturer } from '@/app/components'
 import { useState } from 'react'
 
 const SearchBar = () => {
-const [manufacturer, SetmMnufacturer] = useState("1234")
+const [manufacturer, SetmMnufacturer] = useState("")
 
     const handleSearch = () => { }
     
