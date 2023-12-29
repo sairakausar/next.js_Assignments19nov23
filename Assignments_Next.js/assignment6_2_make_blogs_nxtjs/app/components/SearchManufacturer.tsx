@@ -61,7 +61,7 @@ const SearchManufacturer = (props: any) => {
                 filteredManufacturers.map((singleFilterMaufacturer) => {
                   return (
                     <Combobox.Option value={singleFilterMaufacturer}>
-                      Nother here
+                      
                     </Combobox.Option>
                   );
                 })
