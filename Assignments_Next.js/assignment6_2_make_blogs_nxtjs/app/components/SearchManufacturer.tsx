@@ -41,7 +41,7 @@ const SearchManufacturer = (props: any) => {
           </Combobox.Button>
           <Combobox.Input
             className="search-manufacturer__input"
-            placeholder="CarCompanyName"
+            placeholder="Select any Car Model Please from here "
             //like props manfacture  come from SeachBar lafafa
             displayValue={(manufacturer: string) => manufacturer}
             // onChange={(event)=>event.target.value}
@@ -71,31 +71,30 @@ const SearchManufacturer = (props: any) => {
                       }
                       value={singleFilterMaufacturer}
                     >
-                    
-                        {({ selected, active }) => (
-                          <>
+                      {({ selected, active }) => (
+                        <>
+                          <span
+                            className={`block truncate ${
+                              selected ? "font-medium" : "font-normal"
+                            }`}
+                          >
+                            {singleFilterMaufacturer}
+                          </span>
+                          {selected ? (
                             <span
-                              className={`block truncate ${
-                                selected ? "font-medium" : "font-normal"
+                              className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
+                                active ? "text-white" : "text-teal-600"
                               }`}
                             >
-                              {singleFilterMaufacturer}
-                            </span>
-                            {selected ? (
-                              <span
-                                className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
-                                  active ? "text-white" : "text-teal-600"
-                                }`}
-                              >
-                                {/* <CheckIcon
+                              {/* <CheckIcon
                                   className="h-5 w-5"
-                                  aria-hidden="true" */}
-                                />
-                              </span>
-                            ) : null}
-                          </>
-                        )}
-                      
+                                  aria-hidden="true" 
+                                />*/}
+                            </span>
+                          ) : null}
+                        </>
+                      )}
+
                       {/* {singleFilterMaufacturer} */}
                     </Combobox.Option>
                   );

@@ -1,9 +1,15 @@
 import Image from 'next/image'
 import { Hero, SearchBar, CustomFilter } from "./components";
 
+import { fetchCars } from '@/utils';
+import { log } from 'console';
 
 
-export default function Home() {
+//utils ka index.ts also use in it. we make page also async 
+export default async function Home() {
+  const allCars = await fetchCars()
+  console.log(allCars);
+  
   return (
     <main className="overflow-hidden">
       <Hero />
