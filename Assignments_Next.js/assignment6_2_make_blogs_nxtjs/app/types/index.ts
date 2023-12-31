@@ -7,7 +7,10 @@ export interface CustomButtonProps{
     handleClick?: () => void,
     //or
     // handleClick:  MouseEventHandler<HTMLButtonElement>,
-    btnType?: "button" | "submit"
+    btnType?: "button" | "submit";
+    textStyles?: string;
+    rightIcon?: string;
+    isDisabled?: boolean;
 }
 export interface CarProps {
     city_mpg: number;
