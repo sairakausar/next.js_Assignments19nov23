@@ -4,6 +4,7 @@ import React from 'react'
 import { useState } from 'react';
 import { CarProps } from '../types';
 import { CustomButton } from '.';
+import { calculateCarRent } from '@/utils';
 
 
 // Destructuring
@@ -15,6 +16,7 @@ import { CustomButton } from '.';
 
 const CarCard = ({ CallforCarCard }: CarPropsType) => {
   const { city_mpg, year, model, make, fuel_type } = CallforCarCard;
+  const CarRent = calculateCarRent(city_mpg , year);
 
   return (
     <div className="car-card group">
@@ -28,6 +30,11 @@ const CarCard = ({ CallforCarCard }: CarPropsType) => {
           {/* //This is 2nd method of Destructure= data came out from props */}
         </h2>
       </div>
+      <p>
+        <span>
+          {CarRent}
+        </span>
+      </p>
     </div>
   );
 };
