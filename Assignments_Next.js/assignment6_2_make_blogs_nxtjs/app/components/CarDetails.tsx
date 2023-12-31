@@ -3,6 +3,7 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { CarProps } from "../types";
+import Image from "next/image";
 
 interface CardDetailsProps {
   fromSimpleCardToDetailCard: CarProps;
@@ -47,12 +48,70 @@ const CarDetails = ({
                   <div className="mt-4">
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full"
                       onClick={closeDetailsPage}
                     >
-                      Close it, thanks!
+                      <Image
+                        src="/close.svg"
+                        alt="close"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                      />
                     </button>
 
+                    <div className="flex-1 flex flex-col gap-3S">
+                      <div
+                        className="relative w-full h-40 bg-primary-blue bg-pattern
+                      bg-cover bg-center rounded-lg"
+                      >
+                        <Image
+                          src="/hero.png"
+                          alt="car model"
+                          fill
+                          priority
+                          className="object-contain"
+                        />
+                      </div>
+
+                      <div className=" flex gap-3">
+                        <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
+                          <Image
+                            src="/hero.png"
+                            alt="car model"
+                            fill
+                            priority
+                            className="object-contain"
+                          />
+                        </div>
+
+                        <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
+                          <Image
+                            src="/hero.png"
+                            alt="car model"
+                            fill
+                            priority
+                            className="object-contain"
+                          />
+                        </div>
+
+                        <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
+                          <Image
+                            src="/hero.png"
+                            alt="car model"
+                            fill
+                            priority
+                            className="object-contain"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex-1 flex flex-col gap-2">
+                    <h1 className="font-semibold text-xl capitalize">
+                      {fromSimpleCardToDetailCard.make}
+                      {fromSimpleCardToDetailCard.model}
+                    </h1>
                     
                   </div>
                 </Dialog.Panel>
