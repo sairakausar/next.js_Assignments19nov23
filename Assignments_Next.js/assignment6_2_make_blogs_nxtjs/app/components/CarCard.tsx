@@ -30,8 +30,8 @@ const CarCard = ({ CallforCarCard }: CarPropsType) => {
           {/* //This is 2nd method of Destructure= data came out from props */}
         </h2>
       </div>
-      <p>
-        <span>
+      <p className="flex *:mt-6 text-[32px] font font-extrabold ">
+        <span className="self-start text-[14px] font-semibold ">
           {CarRent}
         </span>
       </p>
