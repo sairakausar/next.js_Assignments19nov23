@@ -112,7 +112,36 @@ const CarDetails = ({
                       {fromSimpleCardToDetailCard.make}
                       {fromSimpleCardToDetailCard.model}
                     </h1>
-                    
+
+                    <div className="mt-3 flex flex-wrap gap-4">
+                      {Object.entries(fromSimpleCardToDetailCard).map(
+                        ([key, value]) => {
+                          return (
+                            <div className="flex justify-between gap-5 w-full text-right" key={key}>
+                              <h4 className="text-gray-400 capitalize">{key.split("_").join(" ")}</h4>
+                              <p className="text-black-500 font-semibold">{value }</p>
+                            </div>
+                          )
+                          
+                        }
+                      )}
+                    </div>
+
+                   {/* 2nd method  ( <div className="mt-3 flex flex-wrap gap-4">
+                      <h3>city_mpg</h3>
+                      <p>{fromSimpleCardToDetailCard.city_mpg}</p>
+                    </div>
+
+                    <div className="mt-3 flex flex-wrap gap-4">
+                      <h3>class</h3>
+                      <p>{fromSimpleCardToDetailCard.class}</p>
+                    </div>
+
+                    <div className="mt-3 flex flex-wrap gap-4">
+                      <h3>combination_mpg</h3>
+                      <p>{fromSimpleCardToDetailCard.combination_mpg}</p>
+                    </div>   ) */}
+
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
