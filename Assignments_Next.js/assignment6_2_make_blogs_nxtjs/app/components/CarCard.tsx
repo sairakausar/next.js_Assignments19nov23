@@ -4,7 +4,7 @@ import React from 'react'
 import { useState } from 'react';
 import { CarProps } from '../types';
 import { CustomButton, CarDetails } from ".";
-import { calculateCarRent } from '@/utils';
+import { calculateCarRent, generateCarImageUrl } from '@/utils';
 import Image from 'next/image';
 
 
@@ -42,7 +42,7 @@ const CarCard = ({ CallforCarCard }: CarPropsType) => {
       </p>
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src="/hero.png"
+          src={"/hero.png"}
           alt="car model"
           fill
           priority
@@ -59,25 +59,18 @@ const CarCard = ({ CallforCarCard }: CarPropsType) => {
               alt="steering wheel"
             />
             <p className="text-[14px]">
-              
               {transmission === "a" ? "Automatic" : "Manual"}
             </p>
           </div>
 
           <div className="flex flex-col justify-center items-center gap-2">
             <Image src="/tire.svg" width={20} height={20} alt="tire" />
-            <p className="text-[14px]">
-            
-              {drive.toUpperCase()}
-            </p>
+            <p className="text-[14px]">{drive.toUpperCase()}</p>
           </div>
 
           <div className="flex flex-col justify-center items-center gap-2">
             <Image src="/gas.svg" width={20} height={20} alt="gas" />
-            <p className="text-[14px]">
-             
-              {city_mpg} MPG
-            </p>
+            <p className="text-[14px]">{city_mpg} MPG</p>
           </div>
         </div>
 
@@ -87,17 +80,14 @@ const CarCard = ({ CallforCarCard }: CarPropsType) => {
             containersStyles="w-full py-[16px] rounded-full bg-primary-blue"
             textStyles="text-white text-[14px] leading-[17px] font-bold"
             rightIcon="/right-arrow.svg"
-            handleClick={()=>setIsOpen(true)}
+            handleClick={() => setIsOpen(true)}
           />
-          
         </div>
-
-
       </div>
       <CarDetails
         fromSimpleCardToDetailCard={CallforCarCard}
         closeDetailsPage={() => setIsOpen(false)}
-        isDetailPageOpen = {isOpen}
+        isDetailPageOpen={isOpen}
       />
     </div>
   );
