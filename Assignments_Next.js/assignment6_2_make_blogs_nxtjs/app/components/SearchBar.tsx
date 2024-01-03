@@ -4,15 +4,46 @@ import { SearchManufacturer } from '@/app/components'
 import { useState } from 'react'
 import { SearchButton } from '@/app/components'
 import Image from 'next/image'
+import { useRouter } from "next/navigation";
 
 const SearchBar = () => {
   const [manufacturer, SetmMnufacturer] = useState("")
-  const [carModel , SetCarModel] = useState("")
+  const [carModel, SetCarModel] = useState("")
+  const Router = useRouter();
   
- 
 
-    const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {e.target.value }
-    
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    if (manufacturer === "" && carModel === "" ) {
+      return alert('Please fill in the blanks')
+    }
+
+    updateSearchParams(
+      carModel.toLowerCase(), manufacturer.toLowerCase())
+
+  }
+
+  const updateSearchParams = (carModel: string, manufacturer: string) => {
+    const SearchParams = new URLSearchParams(window.location.search);
+
+    if (carModel) {
+      SearchParams.set("car model", carModel);
+    } else {
+      SearchParams.delete('Car model')
+    }
+   
+
+
+     if (manufacturer) {
+       SearchParams.set("Manufacturer", manufacturer);
+     } else {
+       SearchParams.delete("Manufacturer");
+     }
+   const newPathname = `${window.location.pathname} ? ${SearchParams.toString()}`;
+Router.push(newPathname);
+  }
+
     return (
       <form className="searchbar" onSubmit={handleSearch}>
         <div className="searchbar__item">
