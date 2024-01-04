@@ -28,9 +28,9 @@ const SearchBar = () => {
     const SearchParams = new URLSearchParams(window.location.search);
 
     if (carModel) {
-      SearchParams.set("car model", carModel);
+      SearchParams.set("model", carModel);
     } else {
-      SearchParams.delete('Car model')
+      SearchParams.delete('model')
     }
    
 
@@ -39,8 +39,9 @@ const SearchBar = () => {
        SearchParams.set("Manufacturer", manufacturer);
      } else {
        SearchParams.delete("Manufacturer");
-     }
-   const newPathname = `${window.location.pathname} ? ${SearchParams.toString()}`;
+    }
+    // ya samjna ha ?
+   const newPathname = `${window.location.pathname}?${SearchParams.toString()}`;
 Router.push(newPathname);
   }
 

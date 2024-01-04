@@ -3,16 +3,23 @@ import { Hero, SearchBar, CustomFilter,CarCard } from "./components";
 
 import { fetchCars } from '@/utils';
 import { log } from 'console';
+import { manufacturers } from './components/constants';
 
 
 
 //utils ka index.ts also use in it. we make page also async 
-export default async function Home() {
-  const allCars = await fetchCars()
+export default async function Home({ SearchParams }) {
+  const allCars = await fetchCars({
+    manufacturer: SearchParams.manufacturer || '',
+    year: SearchParams.year || 2022,
+    fuel: SearchParams.fuel || '',
+    limit: SearchParams.limit || 10,
+    model: SearchParams.model || '',
+  });
   console.log(allCars);
 
-  const noHaveCar = !Array.isArray(allCars) || allCars.length === 0 || !allCars; 
-  
+  const noHaveCar = !Array.isArray(allCars) || allCars.length === 0 || !allCars;
+
   return (
     <main className="overflow-hidden">
       <Hero />
@@ -35,7 +42,9 @@ export default async function Home() {
         </div>
         {noHaveCar ? (
           <div className="home__error-container">
-            <h2 className="text-black text-xl font-bold">Opss, we no Have CAr</h2>
+            <h2 className="text-black text-xl font-bold">
+              Opss, we no Have CAr
+            </h2>
             {/* <p>{allCars?.message }</p> */}
           </div>
         ) : (
