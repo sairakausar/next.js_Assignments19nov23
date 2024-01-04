@@ -8,13 +8,15 @@ import { manufacturers } from './components/constants';
 
 
 //utils ka index.ts also use in it. we make page also async 
-export default async function Home({ SearchParams }) {
+
+// search param khan sa aya come automatically
+export default async function Home({ searchParams }) {
   const allCars = await fetchCars({
-    manufacturer: SearchParams.manufacturer || '',
-    year: SearchParams.year || 2022,
-    fuel: SearchParams.fuel || '',
-    limit: SearchParams.limit || 10,
-    model: SearchParams.model || '',
+    manufacturer: searchParams.manufacturer || '',
+    year: searchParams.year || 2022,
+    fuel: searchParams.fuel || '',
+    limit: searchParams.limit || 10,
+    model: searchParams.model || '',
   });
   console.log(allCars);
 
