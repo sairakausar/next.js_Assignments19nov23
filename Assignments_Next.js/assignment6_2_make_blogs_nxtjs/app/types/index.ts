@@ -1,3 +1,4 @@
+import { title } from "process";
 import { MouseEventHandler } from "react"
 
 export interface CustomButtonProps{
@@ -37,6 +38,20 @@ export interface FilterProps{
     model:  string,
   
 }
+
+
+
+export interface CustonFilterProps {
+    
+    titleChangeName: string,
+    options: [
+        {
+            title: string,
+            value: string,
+        }]
+}
+
+
 
 
 

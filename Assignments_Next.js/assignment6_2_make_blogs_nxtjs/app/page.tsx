@@ -4,6 +4,8 @@ import { Hero, SearchBar, CustomFilter,CarCard } from "./components";
 import { fetchCars } from '@/utils';
 import { log } from 'console';
 import { manufacturers } from './components/constants';
+import { fuels } from './components/constants';
+import { yearsOfProduction } from './components/constants';
 
 
 
@@ -38,8 +40,8 @@ export default async function Home({ searchParams }) {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            <CustomFilter title="fuel" />
-            <CustomFilter title="year" />
+            <CustomFilter titleChangeName="fuel" options={fuels} />
+            <CustomFilter titleChangeName="year" options={yearsOfProduction} />
           </div>
         </div>
         {noHaveCar ? (
