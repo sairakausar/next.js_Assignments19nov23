@@ -9,15 +9,15 @@ const Navbar = () => {
         <Image src={Logo} fill alt="logo" />
       </div>
       <div className="flex justify-center items-center bg-gradient-radial size-48 rounded-full">
-        Home
+        <button>Home</button>
       </div>
 
       <div className="flex justify-center items-center bg-gradient-radial size-48 rounded-full">
-        About us
+        <button>About us</button>
       </div>
 
       <div className="flex justify-center items-center bg-gradient-radial size-48 rounded-full">
-        Contact Us
+        <button>Contact Us</button>
       </div>
     </div>
   );
