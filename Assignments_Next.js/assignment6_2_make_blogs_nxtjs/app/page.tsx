@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Hero, SearchBar, CustomFilter,CarCard } from "./components";
+import { Hero, SearchBar, CustomFilter, CarCard, ShowMore } from "./components";
 
 import { fetchCars } from '@/utils';
 import { log } from 'console';
@@ -51,6 +51,8 @@ export default async function Home({ searchParams }) {
             </h2>
             {/* <p>{allCars?.message }</p> */}
           </div>
+
+
         ) : (
           <section>
             <h1>We have Car</h1>
@@ -65,9 +67,15 @@ export default async function Home({ searchParams }) {
                   </>
                 );
               })}
-            </div>
+              </div>
+              
+              <ShowMore
+                pageNumber={(searchParams.limit || 10) / 10}
+                isNext={(searchParams.limit ||  10) > allCars.length}
+              />
           </section>
         )}
+
       </div>
     </main>
   );

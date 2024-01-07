@@ -53,14 +53,14 @@ export const updateSearchParams = (type: string, value: string) => {
    const searchParams = new URLSearchParams(window.location.search);
 
     // if (carModel) {
-    searchParams.set("type", type);
+    // searchParams.set("type", type);
     // } 
     // else {
     // searchParams.delete("model");
     // }
 
     // if (value) {
-    searchParams.set("value", value);
+    searchParams.set(type, value);
     // }
     //  else {
     //   searchParams.delete("value");
