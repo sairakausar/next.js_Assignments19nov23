@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import { useRouter } from 'next/navigation'
+
 import { ShowMoreProps } from '../types';
 import { CustomButton } from '../components';
-import { updateSearchParams } from '@/utils';
+
 
 
 
