@@ -40,8 +40,8 @@ export default async function Home({ searchParams }) {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            <CustomFilter titleChangeName="fuel" options={fuels} />
-            <CustomFilter titleChangeName="year" options={yearsOfProduction} />
+            <CustomFilter title="fuel" options={fuels} />
+            <CustomFilter title="year" options={yearsOfProduction} />
           </div>
         </div>
         {noHaveCar ? (

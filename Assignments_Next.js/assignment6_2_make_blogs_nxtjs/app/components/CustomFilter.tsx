@@ -5,38 +5,29 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { Listbox, Transition } from '@headlessui/react'
 import {CustonFilterProps} from '@/app/types'
+import { updateSearchParams } from '@/utils'
 
 
 
-const CustomFilter = ({ titleChangeName, options }: CustonFilterProps) => {
-  const [selected, setSelected] = useState(options[0]);
-  const Router = useRouter()
+const CustomFilter = ({ title, options }: CustonFilterProps) => {
+ const [selected, setSelected] = useState(options[0]);
+ const Router = useRouter();
 
-  const handleupdateparams = (type: string, value: string) => {
-    const newPathName = '';
+ const handleUpdateParams = (e: { title: string; value: string }) => {
+   const newPathName = updateSearchParams(title, e.value.toLowerCase());
 
-    const searchParams = new URLSearchParams(window.location.search);
-
-    // if (carModel) {
-    searchParams.set("type", type);
-    // } 
-    // else {
-    // searchParams.delete("model");
-    // }
-
-    // if (value) {
-    searchParams.set("value", value);
-    // }
-    //  else {
-    //   searchParams.delete("value");
-    // }
-    
-    Router.push(newPathName);
-  }
+   Router.push(newPathName);
+ };
 
   return (
     <div className="w-44">
-      <Listbox value={selected} onChange={setSelected}>
+      <Listbox
+        value={selected}
+        onChange={(e) => {
+          setSelected(e);
+          handleUpdateParams(e);
+        }}
+      >
         <div className="relative mt-1">
           <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
             <span className="block truncate">{selected.title}</span>

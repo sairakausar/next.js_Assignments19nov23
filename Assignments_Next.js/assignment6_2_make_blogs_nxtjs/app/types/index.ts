@@ -43,7 +43,7 @@ export interface FilterProps{
 
 export interface CustonFilterProps {
     
-    titleChangeName: string,
+    title: string,
     options: [
         {
             title: string,
