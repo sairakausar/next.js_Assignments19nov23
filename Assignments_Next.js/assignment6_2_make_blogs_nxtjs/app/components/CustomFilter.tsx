@@ -9,15 +9,9 @@ import { updateSearchParams } from '@/utils'
 
 
 
-const CustomFilter = ({ title, options }: CustonFilterProps) => {
- const [selected, setSelected] = useState(options[0]);
- const Router = useRouter();
-
- const handleUpdateParams = (e: { title: string; value: string }) => {
-   const newPathName = updateSearchParams(title, e.value.toLowerCase());
-
-   Router.push(newPathName);
- };
+const CustomFilter = ({ title, options, setFilter }: any) => {
+  const [selected, setSelected] = useState(options[0]);
+ 
 
   return (
     <div className="w-44">
@@ -25,7 +19,7 @@ const CustomFilter = ({ title, options }: CustonFilterProps) => {
         value={selected}
         onChange={(e) => {
           setSelected(e);
-          handleUpdateParams(e);
+          setFilter(e.value);
         }}
       >
         <div className="relative mt-1">

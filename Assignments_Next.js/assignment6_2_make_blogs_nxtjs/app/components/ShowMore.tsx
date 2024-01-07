@@ -7,14 +7,13 @@ import { updateSearchParams } from '@/utils';
 
 
 
-const ShowMore = ({ pageNumber, isNext }: ShowMoreProps) => {
-  const Router = useRouter();
-  const newLimit = (pageNumber + 1) * 10;
+const ShowMore = ({ pageNumber, isNext, setLimit }: ShowMoreProps) => {
+  
+  
 
   const handleNavigation = () => {
-    const newPathname = updateSearchParams("limit", `${newLimit}`);
-    Router.push(newPathname);
-  };
+   const newLimit = (pageNumber + 1) * 10;
+  setLimit(newLimit);};
 
   return (
     <div className="w-full flex-center gap-5 mt-10">

@@ -5,7 +5,7 @@ import { Combobox, Transition } from "@headlessui/react";
 import { useState, Fragment } from "react";
 import { manufacturers } from "./constants";
 
-const SearchManufacturer = (props: any) => {
+const SearchManufacturer = ({selected , setSelected}: any) => {
   // Who User write the this useSeate set the Query
   const [query, setQuery] = useState("");
 
@@ -23,7 +23,7 @@ const SearchManufacturer = (props: any) => {
   //end if statment
   return (
     <div className="search-manufacturer">
-      <Combobox value={props.manufacturer} onChange={props.SetmMnufacturer} >
+      <Combobox value={selected} onChange={setSelected} >
         <div className="ralative w-full">
           <Combobox.Button
             className="absolute top-[4px]"
