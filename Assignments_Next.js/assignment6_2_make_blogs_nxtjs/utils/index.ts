@@ -7,8 +7,10 @@ export async function fetchCars(filters: FilterProps) {
    const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '98a84c6901msh3ee056210f3e2fdp13afcdjsna6c57d4a101d',
-		'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
+		'X-RapidAPI-Key': '0ee3379fe8msh460d5ce792916b8p17f130jsn57755da30daf',
+    'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
+    
+                          
 	}
 }
   const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`;
@@ -17,6 +19,7 @@ export async function fetchCars(filters: FilterProps) {
     let jsonResult = await result.json()
     return jsonResult
 }
+
 
 
 

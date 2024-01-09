@@ -10,21 +10,21 @@ import { updateSearchParams } from '@/utils'
 
 
 const CustomFilter = ({ title, options, setFilter }: any) => {
-  const [selected, setSelected] = useState(options[0]);
+  const [menu, setMenu] = useState(options[0]);
  
 
   return (
     <div className="w-44">
       <Listbox
-        value={selected}
+        value={menu}
         onChange={(e) => {
-          setSelected(e);
+          setMenu(e);
           setFilter(e.value);
         }}
       >
         <div className="relative mt-1">
           <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-            <span className="block truncate">{selected.title}</span>
+            <span className="block truncate">{menu.title}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <Image
                 src="/chevron-up-down.svg"

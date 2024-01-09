@@ -21,25 +21,25 @@ export default function Home() {
   const [manufacturer, setManufacturer] = useState("")
   const [model, setModel] = useState("")
   const [fuel, setFuel] = useState("")
-  const [year, setYear] = useState(202)
+  const [year, setYear] = useState(2022)
   const [limit, setLimit] = useState(10)
   
   const getCars = async () => {
     setLoading(true)
     try {
       const result = await fetchCars({
-        manufacturer: manufacturer || "",
+        manufacturer: manufacturer.toLowerCase() || "",
         year: year || 2022,
-        fuel: fuel || "",
+        fuel: fuel.toLowerCase() || "",
         limit: limit || 10,
-        model: model || "",
+        model: model.toLowerCase() || "",
       });
       setAllCars(result);
 
       console.log(allCars);
     }
-    catch(error) {
-      console.log(error);
+    catch {
+      console.error();
       
     } finally {
       setLoading(false)
@@ -53,7 +53,7 @@ export default function Home() {
   }, [limit,year, fuel, model, manufacturer, loading, allCars]
   )
 
-  const noHaveCar = !Array.isArray(allCars) || allCars.length === 0 || !allCars;
+ 
 
   return (
     <main className="overflow-hidden">
@@ -79,7 +79,7 @@ export default function Home() {
             />
           </div>
         </div>
-        {noHaveCar ? (
+        {allCars ? (
           <div className="home__error-container">
             <h2 className="text-black text-xl font-bold">
               Opss, we no Have CAr

@@ -8,17 +8,17 @@ import { useRouter } from "next/navigation";
 
 const SearchBar = ({ setManufacturer, setModel }: any) => {
   const [searchManufacturer, SetSearchMnufacturer] = useState("");
-  const [carModel, SetCarModel] = useState("");
+  const [searchModel, SetSearchModel] = useState("");
   const Router = useRouter();
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (searchManufacturer === "" && carModel === "") {
+    if (searchManufacturer === "" && searchModel === "") {
       return alert("Please fill in the blanks");
     }
 
-    setModel(carModel.toLowerCase(), searchManufacturer.toLowerCase());
+    setModel(searchModel.toLowerCase(), searchManufacturer.toLowerCase());
   };
 
 
@@ -44,9 +44,9 @@ const SearchBar = ({ setManufacturer, setModel }: any) => {
         <input
           type="text"
           name="model"
-          value={carModel}
+          value={searchModel}
           onChange={(e) => {
-            SetSearchModel(e.target.value);
+           SetSearchModel(e.target.value);
           }}
           placeholder="BMW"
           className="searchbar__item"
