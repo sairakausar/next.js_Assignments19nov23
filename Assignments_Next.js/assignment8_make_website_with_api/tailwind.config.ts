@@ -15,6 +15,8 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [
+        require('flowbite/plugin')
+    ],
 }
 export default config
