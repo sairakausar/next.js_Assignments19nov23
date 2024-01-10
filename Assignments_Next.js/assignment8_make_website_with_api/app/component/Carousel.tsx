@@ -3,9 +3,18 @@ import Image from 'next/image'
 import { oneImage } from '@/public/ima2.jpg'
 import { twoImage } from "@/public/ima2.jpg";
 
+
+
 const Carousel = () => {
   return (
-    <div>
+    
+            
+
+
+
+
+
+<div>
       <div
         id="default-carousel"
         className="relative w-full"
