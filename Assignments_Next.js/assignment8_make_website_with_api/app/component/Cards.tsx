@@ -6,7 +6,7 @@ import ShowMoreButton from './ShowMoreButton';
 const Card = async () => {
     const products = await FetchData();
   return (
-    <div className="grid lg:bg-emerald-100 lg:grid-cols-4 md:grid-cols-3 md:bg-teal-300 sm:grid-cols-2 sm:bg-slate-300 xs:grid-cols-1 gap-9 mx-10">
+    <div className="grid lg:bg-emerald-100 lg:grid-cols-4 md:grid-cols-3 md:bg-teal-300 sm:grid-cols-2 sm:bg-slate-300 xs:grid-cols-1 xxs:mx-0 gap-9 mx-10">
       {products.map((product: any) => {
         return (
           <div className="border border-blue-700 to-green-400  p-2">
