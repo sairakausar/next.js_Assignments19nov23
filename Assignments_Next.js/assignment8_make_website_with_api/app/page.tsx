@@ -3,6 +3,7 @@
 import Card from "./component/Cards";
 import Navbar from "./component/Navbar";
 import Carousel from "./component/Carousel";
+import Footer from "./component/Footer";
 
 
 
@@ -14,6 +15,7 @@ export default  function Home() {
       <Navbar />
       <Carousel />
       <Card />
+      <Footer />
     </main>
   );
 }
