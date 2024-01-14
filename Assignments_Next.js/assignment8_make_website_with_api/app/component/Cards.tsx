@@ -13,20 +13,22 @@ const Card = async () => {
           <div
             key={product.id}
             className="border border-blue-700 to-green-400 bg-gradient-to-l
-           lg:from-pink-400 lg:to-yellow-300 md:from-green-400 md:to-teal-500 sm:from-amber-300 sm:to-lime-400 p-2"
+           lg:from-pink-400 lg:to-yellow-300 hover:bg-fuchsia-600 md:from-green-400
+           md:to-teal-500 sm:from-amber-300 sm:to-lime-400 xs:from-pink-400
+            xs:to-yellow-300 p-2"
           >
             <div className=" relative border-4 lg:border-green-700 border-red-800 h-48">
               <Image src={product.image} fill alt="image" />
             </div>
             <div className="border-2 border-green-700 h-12 flex justify-around items-center">
-              <div className="relative border-2 border-purple-800 h-8 flex justify-center">
-                Title:
-              </div>
               <div>Category= {product.category}</div>
             </div>
+            <div className="relative border-2 border-purple-800 h-12 overflow-hidden flex justify-center ">
+              Title: {product.title}
+            </div>
 
-            <div className="relative border-2 border-purple-800 h-8 flex justify-center">
-              Price = {product.price}
+            <div className="relative border-2 border-purple-800 h-8 font-bold flex justify-center items-center">
+              Price = ${product.price}
             </div>
 
             <div>

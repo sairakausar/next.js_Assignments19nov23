@@ -10,7 +10,6 @@ const ShowMoreDetails = (props: any) => {
     
   return (
     <>
-      
       <Transition appear show={props.isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={props.closeModal}>
           <Transition.Child
@@ -36,7 +35,11 @@ const ShowMoreDetails = (props: any) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-teal-100 p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel
+                  className="w-full max-w-md transform overflow-hidden rounded-2xl
+                 bg-teal-100 p-6 text-left align-middle shadow-xl transition-all lg:bg-emerald-100 
+     md:bg-orange-300  sm:bg-slate-300"
+                >
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
@@ -47,13 +50,19 @@ const ShowMoreDetails = (props: any) => {
                     <Image src={props.product.image} fill alt="" />
                   </div>
                   <div className="mt-2">{props.product.title}</div>
-                  <div>Price: $ {props.product.price}</div>
-                  <div>Price: $ {props.product.category}</div>
+                  <div className="font-bold">
+                    Price: $ {props.product.price}
+                  </div>
+                  <div>Category: {props.product.category}</div>
 
                   <div className="mt-4">
                     <button
                       type="button"
-                      className="inline-flex justify-center border border-transparent bg-blue-700 rounded-full px-4 py-2 text-sm font-medium text-yellow-200 hover:bg-emerald-700 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="inline-flex justify-center border border-transparent
+                       bg-blue-700 rounded-full px-4 py-2 text-sm font-medium text-yellow-200
+                       hover:bg-emerald-700 hover:text-white focus:outline-none  border-b-4
+                       border-rose-700 focus-visible:ring-2 focus-visible:ring-blue-500 
+                       focus-visible:ring-offset-2 "
                       onClick={props.closeModal}
                     >
                       Show Other Products

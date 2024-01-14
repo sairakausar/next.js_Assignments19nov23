@@ -14,12 +14,15 @@ const ShowMoreButton = (props:any) => {
       setIsOpen(true);
     }
   return (
-    <div >
+    <div>
       <div className="flex justify-center  ">
         <button
           type="button"
           onClick={openModal}
-          className="bg-blue-300 rounded-full hover:bg-emerald-600 hover:text-white w-40 h-8"
+          className="bg-blue-300 rounded-full border-b-4 border-red-600 
+           lg:hover:bg-emerald-600 md:hover:bg-lime-400 md:hover:text-red-600
+            lg:hover:text-white sm:hover:text-orange-600 w-40 h-8 "
+         
         >
           Show More Details
         </button>
