@@ -42,6 +42,20 @@ const Navbar = () => {
         </div>
       </nav>
 
+      <ul className={!nav ? "hidden" : " absolute border border-blue-700 to-green-400 bg-gradient-to-l lg:from-pink-400 lg:to-yellow-300 hover:bg-fuchsia-600 md:from-green-400 md:to-teal-500 sm:from-amber-300 sm:to-lime-400 xs:from-pink-400 xs:to-yellow-300  z-10 h-screen px-8"}>
+        <li className="border-b-2 border-lime-800 w-full">Home</li>
+        <li className="border-b-2 border-lime-800 w-full">About</li>
+        <li className="border-b-2 border-lime-800 w-full">Support</li>
+        <li className="border-b-2 border-lime-800 w-full">platforms</li>
+        <li className="border-b-2 border-lime-800 w-full">Pricing</li>
+        <div className="flex flex-col my-4">
+          <button className="bg-transparent text-indigo-600 px-8 py-3 mb-4">
+            Sign In
+          </button>
+
+          <button className="px-8 py-3 ">Sign Up</button>
+        </div>
+      </ul>
     </>
   );
 };
