@@ -4,14 +4,33 @@ import React from "react";
 import { TfiMenu, TfiClose } from "react-icons/tfi";
 import Image from "next/image";
 import LogoImage from "@/public/logo1.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
-  const handleClick = ()=>{setNav(!nav)}
+
+  const handleClick = () => setNav(!nav);
+
+const closeNavbar = (e: any) => {
+  const navbar = document.getElementById("navbar");
+  if (navbar && !navbar.contains(e.target)) {
+    setNav(false);
+  }
+};
+
+useEffect(() => {
+  document.addEventListener("click", closeNavbar);
+
+  return () => {
+    document.removeEventListener("click", closeNavbar);
+  };
+}, []);
+
+    
   return (
     <>
       <nav
+        id="navbar"
         className="w-screen fixed  flex justify-between items-center  h-[80px] z-10 drop-shadow-lg border border-blue-700 to-green-400 bg-gradient-to-l
            lg:from-pink-400 lg:to-yellow-300 hover:bg-fuchsia-600 md:from-green-400
            md:to-teal-500 sm:from-amber-300 sm:to-lime-400 xs:from-pink-400
@@ -42,7 +61,13 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <ul className={!nav ? "hidden" : " absolute border border-blue-700 to-green-400 bg-gradient-to-l lg:from-pink-400 lg:to-yellow-300 hover:bg-fuchsia-600 md:from-green-400 md:to-teal-500 sm:from-amber-300 sm:to-lime-400 xs:from-pink-400 xs:to-yellow-300  z-10 h-screen px-8"}>
+      <ul
+        className={
+          !nav
+            ? "hidden"
+            : " absolute border border-blue-700 to-green-400 bg-gradient-to-l lg:from-pink-400 lg:to-yellow-300 hover:bg-fuchsia-600 md:from-green-400 md:to-teal-500 sm:from-amber-300 sm:to-lime-400 xs:from-pink-400 xs:to-yellow-300  z-10 h-screen px-8"
+        }
+      >
         <li className="border-b-2 border-lime-800 w-full">Home</li>
         <li className="border-b-2 border-lime-800 w-full">About</li>
         <li className="border-b-2 border-lime-800 w-full">Support</li>
