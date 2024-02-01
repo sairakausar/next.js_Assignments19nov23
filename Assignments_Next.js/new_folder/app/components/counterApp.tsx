@@ -12,15 +12,12 @@ export default function CounterApp() {
     const Minus = () => forDispatch(decrement());
     return (
       <div>
-        
         <div>
           <button onClick={Plus}> Add</button>
         </div>
             {count}
             <br/>
-            
         <button onClick={Minus}> Cut</button>
       </div>
-    );
-        
+    );       
 }

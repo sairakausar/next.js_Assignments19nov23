@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 
 
 const CheckinValue = () => {
-    const CheckingCount = useSelector((store)=>store.counterSlice.count)
-    return (
+    const CheckingCount = useSelector((store)=>store.counterSlice.count) 
+    return ( 
         <div>
           After  update File Thing for check {"   "}
         {CheckingCount}
