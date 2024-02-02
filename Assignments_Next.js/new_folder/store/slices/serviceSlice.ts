@@ -32,4 +32,4 @@ export const ServiceSlice = createSlice({
     }
 })
 export const {createService, upDateService} = ServiceSlice.actions
-export default ServiceSlice.reducerPath
+export default ServiceSlice.reducer
