@@ -8,4 +8,3 @@ export const Store = configureStore({
       ServiceSlice: ServiceSlice,
   },
 })
-export default Store

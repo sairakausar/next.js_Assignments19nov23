@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 import HeroBigImage from '@/public/2Hero.jpg'
 import FormForData from './formForData';
+import ServiceSlice from '@/store/slices/serviceSlice';
 
 const Hero = () => {
   return (
@@ -13,8 +14,11 @@ const Hero = () => {
           className="w-full h-[500px] bg-center bg-no-repeat bg-cover relative opacity-65"
         />
         <span className="text-4xl text-black  text-center absolute top-[50%] left-[80%] transform -translate-x-1/2 -translate-y-1/2 ">
-          <FormForData />
-          <div className='text-stone-950'>
+          <div className='grid grid-rows-2'>
+            <FormForData />
+            
+          </div>
+          <div className="text-stone-950">
             Use Redux Toolkit
             <br /> Make a Form
           </div>
