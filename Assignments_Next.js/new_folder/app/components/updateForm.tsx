@@ -3,7 +3,7 @@ import React from "react";
 import { createService, upDateService } from "@/store/slices/serviceSlice";
 import {  useDispatch } from "react-redux"; // this send thing in fron with action to store
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const UpdateForm = () => {
     const [title, setTitle] = useState("")
@@ -17,7 +17,8 @@ const UpdateForm = () => {
     const create = () => {
         forDispatch(
             createService({
-                id: 2,
+            // id: 2,
+                id: Math.random(),
                 title: title,
                 description: discription,
             })
@@ -29,6 +30,8 @@ const UpdateForm = () => {
     
     //2 new title
     const newTitle = (event: any) => setTitle(event.target.value);
+//set value onchnge hony pa value change karta ha eith event.target.value  ka sath
+
     //3 new Description
     const NewDescription = (event: any) => setDiscription(event.target.value);
 
@@ -41,6 +44,7 @@ const UpdateForm = () => {
           className="border-2 border-black"
           value={title}
           onChange={newTitle}
+          //set value onchnge hony pa value change karta ha eith event.target.value  ka sath
         ></input>
         <label>Discription</label>
         <input
