@@ -1,31 +1,43 @@
+'use client'
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    title: "A.I",
-    discription: "This is the AI",
+  servicess: [
+    {
+      id:1,
+  title: "A.I",
+  discription: "This is the AI"
+    }, {
+      id:2,
+      title: "web 3",
+      discription: "This is web 3.0"
+    }
+  ]
 };
 
-export const counterSlice = createSlice({
-  title: title,
+export const ServiceSlice = createSlice({
+  name: "title",
   initialState: initialState,
   reducers: {
-    createNew: (state) => { 
+    createNew: (state, action) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
-     
+      state.servicess = [...state.servicess, action.payload];
     },
-    updateNew: (state) => {
-      state.title =  
-    },
-    incrementByAmount: (state, action) => {
-      state.title = action.payload;
+    updateNew: (state, action) => {
+      state.servicess = state.servicess.map((service) => {
+        if (service.id === action.payload.id) {
+          return action.payload;
+        }
+        return service;
+      });
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { createNew, updateNew, incrementByAmount } = counterSlice.actions;
+export const { createNew, updateNew } = ServiceSlice.actions
 
-export default counterSlice.reducer;
+export default ServiceSlice.reducer

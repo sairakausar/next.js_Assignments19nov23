@@ -3,6 +3,7 @@ import Image from 'next/image';
 import HeroBigImage from '@/public/2Hero.jpg'
 import FormForData from './formForData';
 import ServiceSlice from '@/store/slices/serviceSlice';
+import { ServiceApp } from './serviceApp';
 
 const Hero = () => {
   return (
@@ -15,6 +16,7 @@ const Hero = () => {
         />
         <span className="text-4xl text-black  text-center absolute top-[50%] left-[80%] transform -translate-x-1/2 -translate-y-1/2 ">
           <div className='grid grid-rows-2'>
+            <ServiceApp />
             <FormForData />
             
           </div>
