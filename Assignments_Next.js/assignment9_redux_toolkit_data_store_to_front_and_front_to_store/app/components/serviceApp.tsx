@@ -1,18 +1,31 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux';
-import { createNew, updateNew } from '@/store/slices/serviceSlice';
+import { useSelector } from 'react-redux';
+
+
 
 
 export function ServiceApp  ()  {
-    const count = useSelector((state) => state.ServiceSlice.servicess);
-    
-    
-    return <div>
-        <div>
+    const StoreDataComeFromStoreWithRedux = useSelector((state) => state.ServiceSlice.servicess);
+ 
 
+    
+    return (
+      <div>
+            <div>{StoreDataComeFromStoreWithRedux.map((TakeOneService) => {
+                return (
+                    <>
+                    <div>
+                        {TakeOneService.title}
+                    </div>
+                    <div>
+                             {TakeOneService.discription}
+                        </div>
+                        </>
 
-        </div>
-        
-    </div>;
+                );
+                
+        })}</div>
+      </div>
+    );
 }
 
