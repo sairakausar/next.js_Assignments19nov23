@@ -41,7 +41,8 @@ const query   = async (data: any) =>{
       <br />
       <div className="grid grid-cols-1 text-4xl">Next GenAL Image</div>
       <br />
-      <input
+          <input
+              className='border border-black bg-lime-200'
         type="text"
         onChange={(event) => {
           setText(event.target.value);
@@ -56,7 +57,7 @@ const query   = async (data: any) =>{
         Submit{" "}
       </button>
       <div>
-        <Image src={image} alt="Image error" width={80} height={80}/>
+        <Image src={image} alt="Image error" width={300} height={300}/>
       </div>
     </div>
   );
