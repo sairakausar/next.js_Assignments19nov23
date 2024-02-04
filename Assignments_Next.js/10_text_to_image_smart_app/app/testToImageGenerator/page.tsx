@@ -48,16 +48,18 @@ const query   = async (data: any) =>{
           setText(event.target.value);
         }}
       />
-      <button
+          <button
         onClick={onSubmitText}
         type="button"
-        className="border border-r-fuchsia-900"
+              className="border border-r-fuchsia-900 bg-slate-300"
+              
       >
         {" "}
         Submit{" "}
-      </button>
+          </button>
+          <br/>
       <div>
-        <Image src={image} alt="Image error" width={300} height={300}/>
+        <Image src={image} alt="Image error" width={600} height={600}/>
       </div>
     </div>
   );
