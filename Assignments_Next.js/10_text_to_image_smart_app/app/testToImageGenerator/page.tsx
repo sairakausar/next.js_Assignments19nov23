@@ -2,6 +2,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Image from 'next/image'
+import Hero from "../hero";
 
 const PageTextToImageGenerator = () => {
 
@@ -36,33 +37,36 @@ const query   = async (data: any) =>{
     }
     
     
-  return (
-    <div>
-      <br />
-      <div className="grid grid-cols-1 text-4xl">Next GenAL Image</div>
-      <br />
+    return (
+        <>
+            <Hero/>
+            
+        <div>
+          <br />
+          <div className="grid grid-cols-1 text-4xl">Next GenAL Image</div>
+          <br />
           <input
-              className='border border-black bg-lime-200'
-        type="text"
-        onChange={(event) => {
-          setText(event.target.value);
-        }}
-      />
+            className="border border-black bg-lime-200"
+            type="text"
+            onChange={(event) => {
+              setText(event.target.value);
+            }}
+          />
           <button
-        onClick={onSubmitText}
-        type="button"
-              className="border border-r-fuchsia-900 bg-slate-300"
-              
-      >
-        {" "}
-        Submit{" "}
+            onClick={onSubmitText}
+            type="button"
+            className="border border-r-fuchsia-900 bg-slate-300"
+          >
+            {" "}
+            Submit{" "}
           </button>
-          <br/>
-      <div>
-        <Image src={image} alt="Image error" width={600} height={600}/>
-      </div>
-    </div>
-  );
+          <br />
+          <div>
+            <Image src={image} alt="Image error" width={600} height={600} />
+          </div>
+        </div>
+      </>
+    );
 }
 
 export default PageTextToImageGenerator;
