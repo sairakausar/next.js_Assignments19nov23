@@ -11,8 +11,16 @@ import {
 
 function Component() {
   return (
-    <Navbar rounded className="bg-purple-500 h-28 flex z-50 absolute w-screen">
-      <NavbarBrand as={Link} href="https://flowbite-react.com">
+    <Navbar
+      rounded
+      className=" bg-gradient-to-br from-amber-500 to-lime-700 h-28 flex z-50 absolute w-screen"
+    >
+      <NavbarBrand
+        as={Link}
+        href="https://flowbite-react.com"
+        className="border-2 border-black"
+        //...........
+      >
         {/* <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt=" Logo" /> */}
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Text to Image Generator
@@ -20,16 +28,30 @@ function Component() {
       </NavbarBrand>
       <NavbarToggle className="bg-red-500 z-50 absolute right-8" />
 
-      <NavbarCollapse>
-        <NavbarLink href="#" active>
-          Home
-        </NavbarLink>
-        <NavbarLink as={Link} href="#">
-          About
-        </NavbarLink>
-        <NavbarLink href="#">Services</NavbarLink>
-        <NavbarLink href="#">Pricing</NavbarLink>
-        <NavbarLink href="#">Contact</NavbarLink>
+      <NavbarCollapse className="flex justify-between w-[60%]  border-2 border-black">
+        {/* //.....NavbarCollapse...... */}
+        <NavbarCollapse>
+          <NavbarLink href="#" active>
+            Home
+          </NavbarLink>
+        </NavbarCollapse>
+
+        <NavbarCollapse>
+          {" "}
+          <NavbarLink as={Link} href="#">
+            About
+          </NavbarLink>
+        </NavbarCollapse>
+        <NavbarCollapse>
+          {" "}
+          <NavbarLink href="#">Services</NavbarLink>
+        </NavbarCollapse>
+        <NavbarCollapse>
+          <NavbarLink href="#">Pricing</NavbarLink>
+        </NavbarCollapse>
+        <NavbarCollapse>
+          <NavbarLink href="#">Contact</NavbarLink>
+        </NavbarCollapse>
       </NavbarCollapse>
     </Navbar>
   );
