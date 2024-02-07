@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import OneHeroImage from '@/public/OneHeroBig.jpg'
 
+
 const Hero = () => {
   return (
     <div className="h-[600px] bg-center bg-no-repeat bg-cover relative ">
@@ -18,10 +19,3 @@ const Hero = () => {
 
 export default Hero
 
-// {
-//   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("photographer.jpg");
-//   height: 50%;
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   position: relative;

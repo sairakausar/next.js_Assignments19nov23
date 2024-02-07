@@ -2,7 +2,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Image from 'next/image'
-import Hero from "../hero";
+
 
 const PageTextToImageGenerator = () => {
 
@@ -39,7 +39,7 @@ const query   = async (data: any) =>{
     
     return (
         <>
-            <Hero/>
+           
             
         <div>
           <br />
